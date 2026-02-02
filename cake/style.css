@@ -1,0 +1,201 @@
+/* =====================
+     CAKE CONTAINER
+===================== */
+
+.cake-container {
+  position: relative;
+  top: 100px;
+  width: 100%;
+  height: 400px;
+}
+.cake {
+  position: absolute;
+  width: 250px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cake > * {
+  position: absolute;
+}
+
+/* =====================
+     PLATE
+===================== */
+
+.plate {
+  width: 270px;
+  height: 110px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background-color: #ccc;
+  border-radius: 50%;
+  box-shadow:
+    0 2px 0 #b3b3b3,
+    0 4px 0 #b3b3b3,
+    0 5px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* =====================
+     CAKE LAYERS
+===================== */
+
+.layer {
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #553c13;
+  box-shadow:
+    0 2px 0 #6a4b18,
+    0 4px 0 #33240b,
+    0 6px 0 #32230b,
+    0 8px 0 #31230b,
+    0 10px 0 #30220b,
+    0 12px 0 #2f220b,
+    0 14px 0 #2f210a,
+    0 16px 0 #2e200a,
+    0 18px 0 #2d200a,
+    0 20px 0 #2c1f0a,
+    0 22px 0 #2b1f0a,
+    0 24px 0 #2a1e09,
+    0 26px 0 #2a1d09,
+    0 28px 0 #291d09,
+    0 30px 0 #281c09;
+}
+
+.layer-top {
+  top: 0;
+}
+.layer-middle {
+  top: 33px;
+}
+.layer-bottom {
+  top: 66px;
+}
+
+/* =====================
+     ICING + DRIPS
+===================== */
+
+.icing {
+  top: 2px;
+  left: 5px;
+  width: 240px;
+  height: 90px;
+  background-color: #f3a3d9;
+  border-radius: 50%;
+}
+
+.icing::before {
+  content: "";
+  position: absolute;
+  inset: 4px 5px 6px;
+  background-color: #f3a3d9;
+  box-shadow: 0 0 4px #f3a3d9;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.drip {
+  width: 50px;
+  height: 60px;
+  background-color: #f3a3d9;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.drip1 {
+  top: 53px;
+  left: 5px;
+  width: 40px;
+  height: 48px;
+  transform: skewY(15deg);
+}
+
+.drip2 {
+  top: 69px;
+  left: 181px;
+  transform: skewY(-15deg);
+}
+
+.drip3 {
+  top: 54px;
+  left: 90px;
+  width: 80px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+/* =====================
+     SVG NUMBER CANDLES
+===================== */
+
+.svg-candle {
+  position: absolute;
+  width: 70px;
+  height: 120px;
+  z-index: 100;
+  pointer-events: none;
+}
+
+.svg-candle.out .flame {
+  display: none;
+}
+
+/* =====================
+     FLAME
+===================== */
+
+.flame {
+  position: absolute;
+  width: 14px;
+  height: 32px;
+  top: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: orange;
+  border-radius: 50% 50% 45% 45%;
+  box-shadow:
+    0 0 12px rgba(255, 165, 0, 0.6),
+    0 0 30px rgba(255, 165, 0, 0.5);
+  animation: flicker 1s infinite alternate;
+}
+
+@keyframes flicker {
+  from {
+    transform: translateX(-50%) skewX(4deg);
+  }
+  to {
+    transform: translateX(-50%) skewX(-4deg);
+  }
+}
+
+/* =====================
+     CURVED CAKE TEXT
+===================== */
+
+.cake-text {
+  position: absolute;
+  top: 28px;
+  left: 0;
+  width: 250px;
+  height: 100px;
+  pointer-events: none;
+  z-index: 150;
+}
+
+.cake-text text {
+  fill: #be323b;
+  font-family: "Pacifico", cursive;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 3px;
+}
+
+#blow {
+  margin-top: 40px;
+  font-size: 15px;
+}
